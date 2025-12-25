@@ -1,5 +1,3 @@
-# saves the model in a new file called models or smth
-#mostly copy and pasted from my other models
 import torch
 from pathlib import Path
 

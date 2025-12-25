@@ -13,10 +13,6 @@ model = model_nn.define_nn_arch(HIDDEN_NURONS, num_features).to(DEVICE)
 model.load_state_dict(torch.load('models/binary_rice_classfication_ai_model.pth', map_location=DEVICE))
 model.eval()
 
-# Index(['id', 'Area', 'MajorAxisLength', 'MinorAxisLength', 'Eccentricity',
-##       'ConvexArea', 'EquivDiameter', 'Extent', 'Perimeter', 'Roundness',
-##       'AspectRation', 'Class'],
-##      dtype='object')
 def predict(area, major, minor, ecc, convx, equiv, ext, peri, rndn, asr):
 
     model_features = [
@@ -33,7 +29,6 @@ def predict(area, major, minor, ecc, convx, equiv, ext, peri, rndn, asr):
     ]
 
 
-    # conv tensor n add dem
     input_tens = torch.tensor([model_features], dtype=torch.float).to(DEVICE)
 
     with torch.inference_mode():
@@ -41,12 +36,6 @@ def predict(area, major, minor, ecc, convx, equiv, ext, peri, rndn, asr):
         proba = torch.sigmoid(logits).item()
 
     return {"Jasmine": 1 -proba, "Gonen": proba}
-
-#'Area', 'MajorAxisLength', 'MinorAxisLength', 'Eccentricity',
-##       'ConvexArea', 'EquivDiameter', 'Extent', 'Perimeter', 'Roundness',
-##       'AspectRation', 'Class'],
-
-
 
 # for UI
 input_list = [
@@ -62,14 +51,12 @@ input_list = [
     gr.Number(label="Aspect Ration"),
 ]
 
-
-
 interface = gr.Interface(
     fn=predict,
     inputs=input_list,
     outputs=gr.Label(num_top_classes=2),
     title="Rice classfication tool",
-    description="Put some hypothetical information about ur rice and it can classify what typa rice u got!"
+    description="Put some hypothetical information about ur rice and it can classify what typa rice u got! If u want to try it out but have random values just put 67 multiple times!!!"
 )
 
 if __name__ == "__main__":

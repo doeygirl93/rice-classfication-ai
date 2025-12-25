@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39721079-4c85-4bb3-9a9f-2a33ba357b97" name="Changes" comment="ok just saving gr interface progress before messing all of ts again">
+    <list default="true" id="39721079-4c85-4bb3-9a9f-2a33ba357b97" name="Changes" comment="IT HATH FINALLY WORKED">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gr_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/gr_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loop_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/loop_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_model_training.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_model_training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_nn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_save_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_save_logic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +229,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1766638708549</updated>
-      <workItem from="1766638709635" duration="17045000" />
+      <workItem from="1766638709635" duration="18323000" />
     </task>
     <task id="LOCAL-00001" summary="Just getting all the files prepped">
       <option name="closed" value="true" />
@@ -307,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766657656404</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="IT HATH FINALLY WORKED">
+      <option name="closed" value="true" />
+      <created>1766658781045</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1766658781045</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +335,8 @@
     <MESSAGE value="MODEL HAS TRAINED TO 50 EPOCH WITH LIKE 90% ACCURARCY" />
     <MESSAGE value="fixed mornalization bugs etc. MODEL HAS TRAINED TO 50 EPOCH WITH LIKE 91% ACCURARCY" />
     <MESSAGE value="ok just saving gr interface progress before messing all of ts again" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok just saving gr interface progress before messing all of ts again" />
+    <MESSAGE value="IT HATH FINALLY WORKED" />
+    <option name="LAST_COMMIT_MESSAGE" value="IT HATH FINALLY WORKED" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Rice_Classfication_tool$data_setup.coverage" NAME="data_setup Coverage Results" MODIFIED="1766648193851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

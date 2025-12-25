@@ -1,4 +1,3 @@
-# Get the training logic all together but the thing will be trained in colab via git
 import data_setup, loop_logic, model_nn, model_save_logic
 import torch
 import torch.optim as optim
@@ -21,3 +20,5 @@ optimizer = optim.Adam(model.parameters(), lr=LR)
 loop_logic.train(model=model, train_dataloader=train_dl, test_dataloader=val_dl, loss_fn=loss_fn, optimizer=optimizer, epochs=EPOCHS, device=DEVICE)
 
 model_save_logic.save_model(model=model, target_dir="models", model_name="binary_rice_classfication_ai_model.pth")
+
+#model trained on local pc cpu i luv tabular data

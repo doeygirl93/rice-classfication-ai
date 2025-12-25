@@ -1,4 +1,3 @@
-### just define the nn and return the nn class'
 import torch.nn as nn
 
 def define_nn_arch(HIDDEN_NURONS, input_size):

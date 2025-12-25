@@ -1,45 +1,33 @@
-### do logic for 1 train step, 1 test step and then final function that does the whole thing with multiple epoches
-### copied from my other model with a couple of tweaks
 import torch
 from tqdm import tqdm
 
-
 def one_train_step(model, dataloader, loss_fn, optimizer, device):
-    ### Does just one epoch of training
     model.train()
     train_loss, train_acc = 0.0, 0.0
 
     for batch, (X, y) in enumerate(dataloader):
         X, y = X.to(device), y.to(device)
 
-        # forward pass
         y_pred = model(X)
-
-        # Diddy blud clac loss
 
         loss = loss_fn(y_pred, y.unsqueeze(1))
         train_loss += loss.item()
 
-        # optimize w/ backpass
         optimizer.zero_grad()
         loss.backward()
 
-        # taking step
         optimizer.step()
 
-        # calc metrics
-
-        y_pred_class = (torch.sigmoid(y_pred) > 0.5).float()
+        y_pred_class = (torch.sigmoid(y_pred) > 0.5).float()            #TS HEAVILY DEPENDS ON THE DATATYPE. THIS ONE IS SIMPLY FOR BINARY DATA THATS TABULAR DON'T USE WITH IMAGES
         train_acc += (y_pred_class == y.view_as(y_pred)).sum().item()
 
     return train_loss / len(dataloader), train_acc / len(dataloader)
-
 
 def one_test_step(model, dataloader, loss_fn, device):
     model.eval()
     test_loss, test_acc = 0.0, 0.0
 
-    with torch.inference_mode():  # lowk same as no grad but like more optimized n efficenint
+    with torch.inference_mode():
         for batch, (X, y) in enumerate(dataloader):
             X, y = X.to(device), y.to(device)
 
@@ -53,10 +41,9 @@ def one_test_step(model, dataloader, loss_fn, device):
     return test_loss / len(dataloader), test_acc / len(dataloader)
 
 
-def train(model, train_dataloader, test_dataloader, loss_fn, optimizer, epochs, device):
-    """basically combines the two and make it multiple epoches"""
 
-    # HOLY FREAK IS THIS SO SMART AND WONDERFUL
+
+def train(model, train_dataloader, test_dataloader, loss_fn, optimizer, epochs, device):  #THIS COMBINES EVERYTHING AND MAKES IT RUN FOR MUTIPLE EPOCHES
     results = {
 
         "train_loss": [],
