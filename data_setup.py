@@ -34,7 +34,7 @@ def setup_data(BATCH_SIZE, NUM_WORKERS, DEVICE):
     for column in og_df.columns:
         og_df[column] = og_df[column]/og_df[column].abs().max()
 
-    X = np.array(og_df.iloc[:,:-1])
+    X = np.array(og_df.iloc[:, :-1])
     Y = np.array(og_df.iloc[:, -1])
 
     X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=42) #split fo training
@@ -70,6 +70,8 @@ def setup_data(BATCH_SIZE, NUM_WORKERS, DEVICE):
     val_dl = DataLoader(validation_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=NUM_WORKERS, pin_memory=True)
     test_dl = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=NUM_WORKERS, pin_memory=True)
 
-    return CLASS_NAMES, train_dl, val_dl, test_dl, X
+
+    num_features = X_train.shape[1]
+    return CLASS_NAMES, train_dl, val_dl, test_dl, num_features
 
 

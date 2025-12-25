@@ -17,7 +17,7 @@ def one_train_step(model, dataloader, loss_fn, optimizer, device):
 
         # Diddy blud clac loss
 
-        loss = loss_fn(y_pred, y)
+        loss = loss_fn(y_pred, y.unsqueeze(1))
         train_loss += loss.item()
 
         # optimize w/ backpass
@@ -30,7 +30,7 @@ def one_train_step(model, dataloader, loss_fn, optimizer, device):
         # calc metrics
 
         y_pred_class = (torch.sigmoid(y_pred) > 0.5).float()
-        train_acc += (y_pred_class == y.veiw_as(y_pred)).sum().item()
+        train_acc += (y_pred_class == y.view_as(y_pred)).sum().item()
 
     return train_loss / len(dataloader), train_acc / len(dataloader)
 
@@ -44,11 +44,11 @@ def one_test_step(model, dataloader, loss_fn, device):
             X, y = X.to(device), y.to(device)
 
             test_pred = model(X)
-            batch_loss = loss_fn(test_pred, y)
+            batch_loss = loss_fn(test_pred, y.unsqueeze(1))
             test_loss += batch_loss.item()
 
             test_pred_labels = (torch.sigmoid(test_pred) > 0.5).float()
-            test_acc += (test_pred_labels == y.veiw_as(test_pred)).sum().item() / len(test_pred)
+            test_acc += (test_pred_labels == y.view_as(test_pred)).sum().item() / len(test_pred)
 
     return test_loss / len(dataloader), test_acc / len(dataloader)
 
