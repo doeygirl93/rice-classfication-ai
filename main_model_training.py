@@ -7,7 +7,7 @@ import torch.nn as nn
 BATCH_SIZE = 32
 NUM_WORKERS = 0
 HIDDEN_NURONS = 128
-EPOCHS = 3
+EPOCHS = 50
 LR = 1e-3
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
