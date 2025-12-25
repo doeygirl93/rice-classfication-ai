@@ -73,8 +73,9 @@ def setup_data(BATCH_SIZE, NUM_WORKERS, DEVICE):
     val_dl = DataLoader(validation_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=NUM_WORKERS, pin_memory=True)
     test_dl = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=NUM_WORKERS, pin_memory=True)
 
+    MAX_VALS = og_df.drop(columns=['id', 'Class']).abs().max().to_dict()
 
     num_features = X_train.shape[1]
-    return CLASS_NAMES, train_dl, val_dl, test_dl, num_features
+    return CLASS_NAMES, train_dl, val_dl, test_dl, num_features, MAX_VALS
 
 

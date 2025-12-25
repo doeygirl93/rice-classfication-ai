@@ -11,7 +11,7 @@ EPOCHS = 50
 LR = 1e-3
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-CLASS_NAMES, train_dl, val_dl, test_dl, num_features = data_setup.setup_data(BATCH_SIZE, NUM_WORKERS, DEVICE)
+CLASS_NAMES, train_dl, val_dl, test_dl, num_features, MAX_VALS = data_setup.setup_data(BATCH_SIZE, NUM_WORKERS, DEVICE)
 
 model = model_nn.define_nn_arch(HIDDEN_NURONS, num_features).to(DEVICE)
 

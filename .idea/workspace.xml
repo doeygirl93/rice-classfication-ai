@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39721079-4c85-4bb3-9a9f-2a33ba357b97" name="Changes" comment="MODEL HAS TRAINED TO 50 EPOCH WITH LIKE 90% ACCURARCY">
+    <list default="true" id="39721079-4c85-4bb3-9a9f-2a33ba357b97" name="Changes" comment="fixed mornalization bugs etc. MODEL HAS TRAINED TO 50 EPOCH WITH LIKE 91% ACCURARCY">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gr_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/gr_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_model_training.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_model_training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +226,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1766638708549</updated>
-      <workItem from="1766638709635" duration="14498000" />
+      <workItem from="1766638709635" duration="15974000" />
     </task>
     <task id="LOCAL-00001" summary="Just getting all the files prepped">
       <option name="closed" value="true" />
@@ -291,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766654241714</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed mornalization bugs etc. MODEL HAS TRAINED TO 50 EPOCH WITH LIKE 91% ACCURARCY">
+      <option name="closed" value="true" />
+      <created>1766655976476</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1766655976476</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,11 +314,12 @@
     <MESSAGE value="about to train but just fixing some bugs" />
     <MESSAGE value="training is ready!!!!! bugs are all now fixed" />
     <MESSAGE value="MODEL HAS TRAINED TO 50 EPOCH WITH LIKE 90% ACCURARCY" />
-    <option name="LAST_COMMIT_MESSAGE" value="MODEL HAS TRAINED TO 50 EPOCH WITH LIKE 90% ACCURARCY" />
+    <MESSAGE value="fixed mornalization bugs etc. MODEL HAS TRAINED TO 50 EPOCH WITH LIKE 91% ACCURARCY" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed mornalization bugs etc. MODEL HAS TRAINED TO 50 EPOCH WITH LIKE 91% ACCURARCY" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Rice_Classfication_tool$data_setup.coverage" NAME="data_setup Coverage Results" MODIFIED="1766648193851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Rice_Classfication_tool$gr_app.coverage" NAME="gr_app Coverage Results" MODIFIED="1766655355576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Rice_Classfication_tool$gr_app.coverage" NAME="gr_app Coverage Results" MODIFIED="1766656933571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Rice_Classfication_tool$main_model_training.coverage" NAME="main_model_training Coverage Results" MODIFIED="1766655887990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Rice_Classfication_tool$model_save_logic.coverage" NAME="model_save_logic Coverage Results" MODIFIED="1766650631742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Rice_Classfication_tool$model_nn.coverage" NAME="model_nn Coverage Results" MODIFIED="1766648733179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
