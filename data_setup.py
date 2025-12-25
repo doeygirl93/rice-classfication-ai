@@ -1,0 +1,1 @@
+##### OK create function, split data, do trainsformations, get into dataset, dataloders, return class names and the loaders

@@ -1,0 +1,1 @@
+### do logic for 1 train step, 1 test step and then final function that does the whole thing with multiple epoches

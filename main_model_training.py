@@ -1,0 +1,1 @@
+# Get the training logic all together but the thing will be trained in colab via git
