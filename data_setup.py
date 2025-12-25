@@ -73,4 +73,3 @@ def setup_data(BATCH_SIZE, NUM_WORKERS, DEVICE):
     return CLASS_NAMES, train_dl, val_dl, test_dl, X
 
 
-setup_data(1, 1, torch.device('cpu'))

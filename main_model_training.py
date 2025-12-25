@@ -5,7 +5,7 @@ import torch.optim as optim
 import torch.nn as nn
 
 BATCH_SIZE = 32
-NUM_WORKERS = 4
+NUM_WORKERS = 0
 HIDDEN_NURONS = 128
 EPOCHS = 3
 LR = 1e-3
@@ -18,5 +18,6 @@ model = model_nn.define_nn_arch(HIDDEN_NURONS, X).to(DEVICE)
 loss_fn = nn.BCEWithLogitsLoss()
 optimizer = optim.Adam(model.parameters(), lr=LR)
 
-loop_logic.train(model, train_dl, loss_fn, optimizer, EPOCHS, DEVICE)
+loop_logic.train(model=model, train_dataloader=train_dl, test_dataloader=val_dl, loss_fn=loss_fn, optimizer=optimizer, epochs=EPOCHS, device=DEVICE)
 
+model_save_logic.save_model(model=model, target_dir="models", model_name="binary_rice_classfication_ai_model.pty")
