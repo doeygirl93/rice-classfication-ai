@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39721079-4c85-4bb3-9a9f-2a33ba357b97" name="Changes" comment="Just getting all the files prepped">
-      <change beforePath="$PROJECT_DIR$/.idea/PythonProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Rice-Classfication-tool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="39721079-4c85-4bb3-9a9f-2a33ba357b97" name="Changes" comment="got data processing etc. set up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model_nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_nn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +48,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.data_setup.executor": "Run",
+    "Python.model_nn.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -221,7 +219,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1766638708549</updated>
-      <workItem from="1766638709635" duration="6324000" />
+      <workItem from="1766638709635" duration="8270000" />
     </task>
     <task id="LOCAL-00001" summary="Just getting all the files prepped">
       <option name="closed" value="true" />
@@ -231,7 +229,23 @@
       <option name="project" value="LOCAL" />
       <updated>1766639201226</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="got data processing etc. set up">
+      <option name="closed" value="true" />
+      <created>1766646970391</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1766646970391</updated>
+    </task>
+    <task id="LOCAL-00003" summary="got data processing etc. set up">
+      <option name="closed" value="true" />
+      <created>1766646977207</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1766646977207</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,10 +253,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Just getting all the files prepped" />
-    <option name="LAST_COMMIT_MESSAGE" value="Just getting all the files prepped" />
+    <MESSAGE value="got data processing etc. set up" />
+    <option name="LAST_COMMIT_MESSAGE" value="got data processing etc. set up" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Rice_Classfication_tool$data_setup.coverage" NAME="data_setup Coverage Results" MODIFIED="1766646926206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Rice_Classfication_tool$data_setup.coverage" NAME="data_setup Coverage Results" MODIFIED="1766648193851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Rice_Classfication_tool$model_nn.coverage" NAME="model_nn Coverage Results" MODIFIED="1766648733179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonProject2$data_setup.coverage" NAME="data_setup Coverage Results" MODIFIED="1766640045086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

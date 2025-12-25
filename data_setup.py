@@ -70,7 +70,7 @@ def setup_data(BATCH_SIZE, NUM_WORKERS, DEVICE):
     val_dl = DataLoader(validation_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=NUM_WORKERS, pin_memory=True)
     test_dl = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=NUM_WORKERS, pin_memory=True)
 
-    return CLASS_NAMES, train_dl, val_dl, test_dl
+    return CLASS_NAMES, train_dl, val_dl, test_dl, X
 
 
 setup_data(1, 1, torch.device('cpu'))
