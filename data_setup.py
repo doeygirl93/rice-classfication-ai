@@ -4,13 +4,24 @@ import kagglehub
 from torch.utils.data import Dataset, DataLoader
 from sklearn.model_selection import train_test_split
 import pandas as pd
-import numpy as np
+
 
 ##        Index(['id', 'Area', 'MajorAxisLength', 'MinorAxisLength', 'Eccentricity',
 ##       'ConvexArea', 'EquivDiameter', 'Extent', 'Perimeter', 'Roundness',
 ##       'AspectRation', 'Class'],
 ##      dtype='object')
 
+DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+class dataset(Dataset):
+    def __init__(self, X, Y):
+        self.X = torch.tensor(X, dtype=torch.float).to(DEVICE)
+        self.Y = torch.tensor(Y, dtype=torch.float).to(DEVICE)
+
+    def __len__(self):
+        return len(self.X)
+
+    def __getitem__(self, idx):
+        return self.X[idx], self.Y[idx]
 
 #BATCH_SIZE, NUM_WORKERS, DEVICE
 # remeber dataset is tabular no image
@@ -26,16 +37,18 @@ def setup_data(BATCH_SIZE, NUM_WORKERS, DEVICE):
     og_df.dropna()
     og_df.drop(['id'], axis=1, inplace=True)
 
-    CLASS_NAMES = og_df.columns
 
-    copied_df = og_df.copy()
+
+    unique_classes = sorted(og_df['Class'].unique())
+    CLASS_NAMES = unique_classes
+    features_df = og_df.drop(columns=['Class'], errors='ignore')
 
     # normalize values
-    for column in og_df.columns:
-        og_df[column] = og_df[column]/og_df[column].abs().max()
+    for column in features_df:
+        features_df[column] = features_df[column]/features_df[column].abs().max()
 
-    X = np.array(og_df.iloc[:, :-1])
-    Y = np.array(og_df.iloc[:, -1])
+    X = features_df.values
+    Y = og_df['Class'].values
 
     X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=42) #split fo training
 
@@ -46,16 +59,6 @@ def setup_data(BATCH_SIZE, NUM_WORKERS, DEVICE):
     print(f"Test set is {X_test.shape[0]} rows")
 
     ## NOW ACTUALLY MAKING THE DATASET
-
-    class dataset(Dataset):
-        def __init__(self, X, Y):
-            self.X = torch.tensor(X, dtype=torch.float).to(DEVICE)
-            self.Y = torch.tensor(Y, dtype=torch.float).to(DEVICE)
-
-        def __len__(self):
-            return len(self.X)
-        def __getitem__(self, idx):
-            return self.X[idx], self.Y[idx]
 
     training_dataset = dataset(X_train, y_train)
     validation_dataset = dataset(X_val, y_val)

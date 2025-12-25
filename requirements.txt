@@ -1,4 +1,6 @@
 torch
-numpy
+gradio
 pandas
-tqdm
+numpy
+kagglehub
+scikit-learn
