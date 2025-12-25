@@ -17,33 +17,38 @@ model.eval()
 ##       'ConvexArea', 'EquivDiameter', 'Extent', 'Perimeter', 'Roundness',
 ##       'AspectRation', 'Class'],
 ##      dtype='object')
-def predict(args):
+def predict(area, major, minor, ecc, convx, equiv, ext, peri, rndn, asr):
 
     model_features = [
         area / MAX_VALS['Area'],
-        MajorAxisLength / MAX_VALS['MajorAxisLength'],
-        MinorAxisLength / MAX_VALS['MinorAxisLength'],
-        Eccentricity / MAX_VALS['Eccentricity'],
-        ConvexArea / MAX_VALS['ConvexArea'],
-        EquivDiameter / MAX_VALS['EquivDiameter'],
-        Extent / MAX_VALS['Extent'],
-        Perimeter / MAX_VALS['Perimeter'],
-        Roundness/ MAX_VALS['Roundness'],
-        AspectRation / MAX_VALS['AspectRation'],
+        major / MAX_VALS['MajorAxisLength'],
+        minor / MAX_VALS['MinorAxisLength'],
+        ecc / MAX_VALS['Eccentricity'],
+        convx / MAX_VALS['ConvexArea'],
+        equiv / MAX_VALS['EquivDiameter'],
+        ext / MAX_VALS['Extent'],
+        peri / MAX_VALS['Perimeter'],
+        rndn/ MAX_VALS['Roundness'],
+        asr / MAX_VALS['AspectRation'],
     ]
 
 
     # conv tensor n add dem
-    input_tens = torch.tensor[args], dtype=torch.float.to(DEVICE)
+    input_tens = torch.tensor([model_features], dtype=torch.float).to(DEVICE)
 
     with torch.inference_mode():
         logits = model(input_tens)
         proba = torch.sigmoid(logits).item()
+
     return {"Jasmine": 1 -proba, "Gonen": proba}
 
 #'Area', 'MajorAxisLength', 'MinorAxisLength', 'Eccentricity',
 ##       'ConvexArea', 'EquivDiameter', 'Extent', 'Perimeter', 'Roundness',
 ##       'AspectRation', 'Class'],
+
+
+
+# for UI
 input_list = [
     gr.Number(label="Area"),
     gr.Number(label="Major Axis Length"),
@@ -69,3 +74,6 @@ interface = gr.Interface(
 
 if __name__ == "__main__":
     interface.launch(share=True)
+
+
+
